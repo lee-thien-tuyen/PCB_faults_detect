@@ -1,4 +1,4 @@
-# PCB_faults_extract
+# PCB_faults_detect
 Application deeplearning with object detection to automatically detect 6 PCB Defects using ResNet101.
 
 Deploy deep learning model using Flask API.
