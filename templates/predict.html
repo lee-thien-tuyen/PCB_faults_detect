@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>PCB Faults Detection</title>
+</head>
+<style>
+    input,label {
+        margin: 0.5rem 0;
+    }
+    .row #column1,
+    .row #column2,
+    .row #column3{
+        float: left;
+        width: 390px;
+        padding: 10px 40px 10px 40px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <center><h1 style="padding:8px;font-weight: 600 !important;font-size: 3.2em;color: rgb(211, 89, 18)">PCB FAULTS DETECTION</h1></center>
+        <center><form class="form-inline" action = "/predict" method = "post" enctype="multipart/form-data">
+            <label for="file_temp">Choose a image template :</label>
+            <input type="file" name="file_temp" id ="file_temp"><br>
+            <label for="file_test">Choose a image test :</label>
+            <input type="file" name="file_test" id="file_test"><br>
+            <input type = "submit" class="btn_success" value="Predict" style="background-color: #04aa6d;color: white;padding: 5px;">
+        </form></center>
+
+        <div class="row">
+            <div id="column1">
+                <div class="column-title">
+                    <h5 style="font-weight: 25 !important;font-size: 1.5em">Image template</h5>
+                </div>
+                <img src="{{ image_temp }}" id="img_temp" alt="Image Template" class="img-thumbnail" style="width:255px;height:255px" >
+            </div>
+ 
+            <div id="column2">
+                <div class="column-title">
+                    <h5 style="font-weight: 25 !important;font-size: 1.5em">Image test</h5>
+                </div>
+                <img src="{{ image_test }}" id="img_test" alt="Image Template" class="img-thumbnail" style="width:255px;height:255px" >
+            </div>
+ 
+            <div id="column3">
+                <div class="column-title">
+                    <h5 style="font-weight: 25 !important;font-size: 1.5em">Image result</h5>
+                </div>
+                <img src="{{ image_result }}" id="img_result" alt="Image Template" class="img-thumbnail" style="width:255px;height:255px" >
+            </div>
+        </div>
+        <!-- <div class="col-lg-5" style="padding-top:30px">
+            <h4>Label name is : <mark style="background-color:#04aa6d;color:white;border-radius:5px">{{sign}}</mark></h4>
+            <h4>Probabilities : {{prob}}</h4>
+        </div> -->
+    </div>
+</body>
+</html>

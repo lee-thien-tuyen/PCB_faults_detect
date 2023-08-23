@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=”stylesheet” href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>PCB Faults Detection</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            color: rgb(211, 89, 18);
+        }
+        #btn_success{
+            background-color: green;
+            color: white;
+        }
+        input,label {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="padding: 8px; font-weight: 600 !important; font-size: 3.2em">PCB FAULTS DETECTION</h1>
+        <form class="form-inline" action="/predict" method="post" enctype="multipart/form-data">
+            <label for="file_temp">Choose a image template:</label>
+            <input type="file" name="file_temp" id="file_temp" accept="image/*"><br><br>
+            <label for="file_temp">Choose a image test:</label>
+            <input type="file" name="file_test" accept="image/*" style="padding-left: 36px;"><br><br>
+            <input type="submit" id="btn_success" value="Predict" style="padding: 5px">
+        </form>
+    </div>
+</body>
+</html>
